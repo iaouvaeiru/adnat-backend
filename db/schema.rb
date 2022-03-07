@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_03_06_224935) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.bigint "organisation_id", null: false
+    t.bigint "organisation_id"
     t.string "name"
     t.string "email_address"
     t.string "password_digest"
