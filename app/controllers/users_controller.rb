@@ -16,6 +16,18 @@ class UsersController < ApplicationController
         render json: user, status: 200
     end
 
+    def leave
+        user = User.find_by(id: params[:id])
+        user.update(:organisation_id => nil)
+        render json: user, status:200
+    end
+
+    def edit
+        user = User.find_by(id: params[:id])
+        user.update!(user_params)
+        render json: user, status: 200
+    end
+
     def login
         user = User.find_by(email_address: params[:email_address])
         if user && user.authenticate(params[:password])
