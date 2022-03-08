@@ -19,6 +19,8 @@ class UsersController < ApplicationController
     def leave
         user = User.find_by(id: params[:id])
         user.update(:organisation_id => nil)
+        shifts = Shift.where(:user_id => params[:id]).to_a
+        shifts.map{|shift| shift.destroy}
         render json: user, status:200
     end
 
