@@ -1,24 +1,16 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Postgresql database
 
-Things you may want to cover:
+* additional gems:
+    uses BCrypt for password encryption
 
-* Ruby version
+    cors enabled
 
-* System dependencies
+    active model serializers to render additional data
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
+    rails s in terminal to start the server
+    please make sure rails server is running on port 3000
 * ...
