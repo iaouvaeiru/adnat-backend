@@ -3,14 +3,16 @@
 * Postgresql database
 
 * additional gems:
-    uses BCrypt for password encryption
+
+    uses BCrypt for password encryption (gemfile line 17)
 
     cors enabled
-    
-    active model serializers to render additional data
+
+    active model serializers (gemfile line 42)
 
 
 * Deployment instructions
+
     Bundle install the necessary gems
 
     rails s in terminal to start the server
