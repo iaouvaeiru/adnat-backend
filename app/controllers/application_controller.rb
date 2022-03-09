@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
     include ActionController::Cookies
   
     def encode_token(payload)
-      JWT.encode(payload, 'ebay')
+      JWT.encode(payload, 'adnat')
     end
   
   
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
         if auth_header
             token = auth_header
             begin
-                JWT.decode(token, 'ebay', true, algorithm: 'HS256')
+                JWT.decode(token, 'adnat', true, algorithm: 'HS256')
             rescue JWT::DecodeError
                 nil
             end
