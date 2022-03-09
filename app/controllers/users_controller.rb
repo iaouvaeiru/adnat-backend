@@ -18,8 +18,9 @@ class UsersController < ApplicationController
 
     def update
         user = User.find_by(id: params[:id])
+        organisation = Organisation.find_by(id: params[:organisation_id])
         user.update(:organisation_id => params[:organisation_id])
-        render json: user, status: 200
+        render json: organisation, status: 200
     end
 
     def leave
