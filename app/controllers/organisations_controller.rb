@@ -5,6 +5,11 @@ class OrganisationsController < ApplicationController
         render json: organisations
     end
 
+    def show
+        organisation = Organisation.find_by(id: params[:id])
+        render json: organisation, status: 200
+    end
+
     def update
         organisation = Organisation.find_by(id: params[:id])
         organisation.update(:name => params[:name], :hourly_rate => params[:hourly_rate])

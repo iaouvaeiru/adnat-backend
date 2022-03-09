@@ -1,8 +1,14 @@
 class UsersController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_error
+    before_action :authorized, only: [:me]
     def index
         users = User.all
         render json: users
+    end
+
+    def me
+        token = encode_token({user_id: @user.id})
+        render json: {user: UserSerializer.new(@user), token: token}
     end
 
     def create
